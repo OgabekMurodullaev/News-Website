@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <div class="container">
+     <ul>
+            {% for new in technology_news %}
+            <li><a href="#"><img src="{{ new.image.url }}" alt="" style="width: 30%"><br>{{ new.title }}</a><br></li>
+            {% endfor %}
+          </ul>
+ </div>
+{% endblock content %}
