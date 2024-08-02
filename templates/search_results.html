@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %} Qidiruv natijalari {% endblock title %}
+
+{% block content %}
+
+    {% for yangilik in barcha_yangiliklar %}
+    <h3><a href="{% url 'new_detail' yangilik.slug %}">{{ yangilik.title }} </a> </h3>
+    {% endfor %}
+
+{% endblock content %}

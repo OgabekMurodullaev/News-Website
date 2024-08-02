@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Admin Sahifasi {% endblock title %}
+
+{% block content %}
+    <h3>Barcha adminlar ro'yxati</h3>
+    <table class="table table-bordered table-responsive">
+        <tr>
+            <th>Username</th>
+            <th>Email address</th>
+        </tr>
+        {% for admin in admin_users %}
+            <tr>
+                <td>{{ admin.username }}</td>
+                <td>{{ admin.email }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock content %}

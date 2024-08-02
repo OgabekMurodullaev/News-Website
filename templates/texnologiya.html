@@ -1,11 +1,55 @@
 {% extends 'base.html' %}
 {% load static %}
+
+<style>
+.news_item {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.news_item:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.news_image img {
+  width: 98%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+.news_content h2 {
+  font-size: 1em;
+  margin: 0;
+}
+</style>
+
+{% block title %} Texnologiya {% endblock title %}
+
 {% block content %}
- <div class="container">
-     <ul>
-            {% for new in technology_news %}
-            <li><a href="#"><img src="{{ new.image.url }}" alt="" style="width: 30%"><br>{{ new.title }}</a><br></li>
-            {% endfor %}
-          </ul>
- </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <h1 class="page-header">Texnologiya yangiliklari</h1>
+              <div class="row">
+                {% for new in technology_news %}
+                <div class="col-md-6">
+                  <div class="news_item">
+                    <div class="news_image">
+                      <a href="{% url 'new_detail' new.slug %}">
+                        <img src="{{ new.image.url }}" alt="{{ new.title }}" class="img-responsive"> </a>
+                    </div>
+                    <div class="news_content">
+                      <h2><a href="{% url 'new_detail' new.slug %}">{{ new.title | truncatewords:5 }}</a></h2>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+
 {% endblock content %}

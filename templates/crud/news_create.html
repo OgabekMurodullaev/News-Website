@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Yangilik qo'shish {% endblock title %}
+
+{% block content %}
+<style>
+    /* CSS fayl yoki <style> tegida */
+.news-update-wrapper {
+    width: 100%; /* Ota elementining kengligini to'liq egallash */
+    max-width: 700px; /* Maksimal kenglik, kerakli qiymatga o'zgartiring */
+    margin: 0 auto; /* Markazlashtirish */
+    padding: 30px;
+    background-color: #ffffff; /* Orqa fon rangi */
+    border-radius: 12px; /* Yumshoq qirralar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Yumshoq soya */
+    box-sizing: border-box; /* Padding va borderni kenglikka qo'shish */
+}
+
+.news-update-wrapper h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.news-update-wrapper form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Elementlar orasida bo'shliq */
+}
+
+.news-update-wrapper form input,
+.news-update-wrapper form select,
+.news-update-wrapper form textarea {
+    width: 100%; /* To'liq kenglik */
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Padding va borderni kenglikka qo'shish */
+    font-size: 16px;
+}
+
+.news-update-wrapper form button {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 6px;
+    background-color: #28a745; /* Yashil rang */
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition:
+</style>
+
+
+
+    <div class="news-update-wrapper">
+    <h2>Saytga yangilik qo'shish</h2>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Saqlash</button>
+    </form>
+</div>
+
+
+{% endblock content %}

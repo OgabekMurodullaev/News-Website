@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load hitcount_tags %}
 
 {% block content %}
 
@@ -10,7 +11,7 @@
           {% for news in news_list %}
           <div class="single_iteam"> <a href="{{news.get_absolute_url}}"> <img src="{{ news.image.url }}" alt=""></a>
             <div class="slider_article">
-              <h2><a class="slider_tittle" href="{{news.get_absolute_url}}">{{ news.title }}</a></h2>
+              <p><a class="slider_tittle" href="{{news.get_absolute_url}}">{{ news.title }}</a></p>
               <p>{{ news.title | slice:":100" }}</p>
             </div>
           </div>
@@ -28,7 +29,10 @@
               {% for news in news_list %}
               <li>
                 <div class="media"> <a href="{{news.get_absolute_url}}" class="media-left"> <img alt="" src="{{ news.image.url }}"> </a>
-                  <div class="media-body"> <a href="{{news.get_absolute_url}}" class="catg_title"> {{ news.title }}</a> </div>
+                  <div class="media-body"> <a href="{{news.get_absolute_url}}" class="catg_title"> {{ news.title }}</a>
+                    <p><i class="fa-solid fa-eye"></i> {% get_hit_count for news %}
+                    </p>
+                  </div>
                 </div>
               </li>
               {% endfor %}
@@ -53,6 +57,7 @@
                   <figure class="bsbig_fig"> <a href="{{local.get_absolute_url}}" class="featured_img"> <img alt="" src="{{ local.image.url }}"> <span class="overlay"></span> </a>
                     <figcaption> <a href="{{local.get_absolute_url}}">{{ local.title | truncatewords:6 }}</a> </figcaption>
                     <p>{{ local.title }}</p>
+                    <p><i class="fa-solid fa-eye"></i> {% get_hit_count for local %}
                   </figure>
                 </li>
                 {% endfor %}
@@ -63,7 +68,7 @@
                 {% for local in local_news %}
                 <li>
                   <div class="media wow fadeInDown"> <a href="{{local.get_absolute_url}}" class="media-left"> <img alt="" src="{{local.image.url}}"> </a>
-                    <div class="media-body"> <a href="{{local.get_absolute_url}}" class="catg_title"> {{ local.title }}</a> </div>
+                    <div class="media-body"> <a href="{{local.get_absolute_url}}" class="catg_title"> {{ local.title }}</a> <p><i class="fa-solid fa-eye"></i> {% get_hit_count for local %}</div>
                   </div>
                 </li>
                 {% endfor %}
@@ -79,7 +84,7 @@
                   {% if forloop.first %}
                   <li>
                     <figure class="bsbig_fig"> <a href="{{new.get_absolute_url}}" class="featured_img"> <img alt="" src="{{ new.image.url }}"> <span class="overlay"></span> </a>
-                      <figcaption> <a href="{{new.get_absolute_url}}">{{ new.title }}</a> </figcaption>
+                      <figcaption> <a href="{{new.get_absolute_url}}">{{ new.title }}</a> <p><i class="fa-solid fa-eye"></i> {% get_hit_count for new %}</p></figcaption>
                       <p>{{ new.body | truncatewords:10 }}</p>
                     </figure>
                   </li>
@@ -91,7 +96,9 @@
                   {% if forloop.counter > 1 %}
                   <li>
                     <div class="media wow fadeInDown"> <a href="{{new.get_absolute_url}}" class="media-left"> <img alt="" src="{{new.image.url}}"> </a>
-                      <div class="media-body"> <a href="{{new.get_absolute_url}}" class="catg_title"> {{new.title}}</a> </div>
+                      <div class="media-body"> <a href="{{new.get_absolute_url}}" class="catg_title"> {{new.title}}</a>
+                        <p><i class="fa-solid fa-eye"></i> {% get_hit_count for new %}
+                      </div>
                     </div>
                   </li>
                   {% endif %}
@@ -107,7 +114,7 @@
                   {% if forloop.first %}
                   <li>
                     <figure class="bsbig_fig wow fadeInDown"> <a href="{{new.get_absolute_url}}" class="featured_img"> <img alt="" src="{{ new.image.url }}"> <span class="overlay"></span> </a>
-                      <figcaption> <a href="{{new.get_absolute_url}}">{{ new.title }}</a> </figcaption>
+                      <figcaption> <a href="{{new.get_absolute_url}}">{{ new.title }}</a> <p><i class="fa-solid fa-eye"></i> {% get_hit_count for new %}</p></figcaption>
                       <p>{{ new.body | truncatewords:10 }}</p>
                     </figure>
                   </li>
@@ -119,7 +126,7 @@
                   {% if forloop.counter > 1 %}
                   <li>
                     <div class="media wow fadeInDown"> <a href="{{new.get_absolute_url}}" class="media-left"> <img alt="" src="{{ new.image.url }}"> </a>
-                      <div class="media-body"> <a href="{{new.get_absolute_url}}" class="catg_title"> {{ new.title }}</a> </div>
+                      <div class="media-body"> <a href="{{new.get_absolute_url}}" class="catg_title"> {{ new.title }}</a> <p><i class="fa-solid fa-eye"></i> {% get_hit_count for new %}</p></div>
                     </div>
                   </li>
                   {% endif %}
@@ -171,7 +178,7 @@
                 {% if forloop.first %}
                 <li>
                   <figure class="bsbig_fig  wow fadeInDown"> <a class="featured_img" href="{{ new.get_absolute_url }}"> <img src="{{ new.image.url }}" alt=""> <span class="overlay"></span> </a>
-                    <figcaption> <a href="{{ new.get_absolute_url }}">{{ new.title }}</a> </figcaption>
+                    <figcaption> <a href="{{ new.get_absolute_url }}">{{ new.title }}</a><p><i class="fa-solid fa-eye"></i> {% get_hit_count for new %}</p> </figcaption>
                     <p>{{ new.body | truncatewords:10 }}</p>
                   </figure>
                 </li>
@@ -185,7 +192,9 @@
                 {% if forloop.counter > 1 %}
                 <li>
                   <div class="media wow fadeInDown"> <a href="{{new.get_absolute_url}}" class="media-left"> <img alt="" src="{{ new.image.url }}"> </a>
-                    <div class="media-body"> <a href="{{new.get_absolute_url}}" class="catg_title">{{ new.title }}</a> </div>
+                    <div class="media-body"> <a href="{{new.get_absolute_url}}" class="catg_title">{{ new.title }}</a>
+                      <p><i class="fa-solid fa-eye"></i> {% get_hit_count for new %}</p>
+                    </div>
                   </div>
                 </li>
                 {% endif %}

@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
@@ -50,12 +51,29 @@ class News(models.Model):
         ordering = ["-publish_time"]
 
 
-
-
 class Contact(models.Model):
     username = models.CharField(max_length=150)
     email = models.EmailField()
     message = models.TextField()
 
+    objects = models.Manager()
+
     def __str__(self):
         return self.email
+
+
+class Comment(models.Model):
+    user = models.ForeignKey(User,
+                             on_delete=models.CASCADE, related_name='comments')
+    new = models.ForeignKey(News, on_delete=models.CASCADE, related_name='comments')
+    body = models.TextField()
+    created_time = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ['created_time']
+
+    objects = models.Manager()
+
+    def __str__(self):
+        return f"{self.user}'s Comment"

@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load hitcount_tags %}
+
 <head>
  <style>
      body {
@@ -28,7 +31,7 @@
 }
 
 .post-image {
-    width: 100%;
+    width: 50%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -41,13 +44,41 @@
 }
  </style>
 </head>
+{% block content %}
 <body>
     <div class="blog-post">
-
-        <img src="{{ news.image.url }}" alt="Blog Image" class="post-image">
+        <img src="{{ news.image.url }}" alt="Blog Image" class="post-image" style="width: 50%">
         <h2 class="post-title">{{ news.title }}</h2>
+        <p><i class="fa-solid fa-eye"></i>Views: {% get_hit_count for news %}</p>
         <p class="post-body">
             {{ news.body }}
         </p>
+        {% if user.is_authenticated and user.is_superuser %}
+        <p><a href="{% url 'new_update' news.slug %}" class="btn btn-primary" role="button">Tahrirlash</a>
+            <a href="{% url 'new_delete' news.slug %}" class="btn btn-danger" role="button">O'chirish</a></p>
+        {% endif %}
+
+        <h5><i class="fa-solid fa-comments"></i>   {{ comment_count }}</h5>
+        {% for comment in comments %}
+        <div>
+            <p>{{ comment.user }}</p> <span>{{ comment.created_time }}</span>
+            <p>{{ comment.body }}</p>
+        </div>
+        {% endfor %}
+
+        {% if user.is_authenticated %}
+        <div>
+            <form method="post">{% csrf_token %}
+                {{ comment_form.as_p }}
+                <button type="submit">Yuborish</button>
+            </form>
+        </div>
+        {% else %}
+        <p>Izoh qoldirish uchun <a href="{% url 'login' %}" class="link">Login qiling</a>
+         yoki <a href="{% url 'signup' %}" class="link">Ro'yxatdan o'ting</a>
+        </p>
+        {% endif %}
     </div>
 </body>
+
+{% endblock content %}

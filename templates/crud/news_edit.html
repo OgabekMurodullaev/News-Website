@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Postni tahrirlash {% endblock title %}
+
+{% block content %}
+<style>
+    <style>
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+    }
+
+    form input[type="submit"] {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    form input[type="submit"]:hover {
+        background-color: #218838;
+    }
+
+    form p {
+        margin-bottom: 15px;
+    }
+
+    form label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    form input[type="text"], form input[type="email"], form textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+    }
+
+    form textarea {
+        height: 150px;
+        resize: vertical;
+    }
+</style>
+    <h2>Postni tahrirlash</h2>
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-success" value="Yuborish">
+    </form>
+
+{% endblock content %}

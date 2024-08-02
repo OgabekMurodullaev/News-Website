@@ -5,10 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f054a49-a9f0-4dfa-bb1a-733131e51a28" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_course_project" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newsproject/custom_user_passes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/profile_edit.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/account/profile_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/account/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/account/register_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/crud/news_create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/crud/news_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/crud/news_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/admin_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/user-profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_change_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_change_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_complete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_confirm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/search_results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newsapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newsapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newsapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newsapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/newsapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newsproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/newsproject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newsproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/newsproject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dunyo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dunyo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/mahalliy.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mahalliy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/new_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/new_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sport.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/texnologiya.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/texnologiya.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,21 +69,30 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2ixmpNN5NFkwDOccGMSGvc2Qpbp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.forms.executor": "Run",
-    "Python.models.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/acer/Desktop/Projects/BlogWebsite",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.forms.executor&quot;: &quot;Run&quot;,
+    &quot;Python.models.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/acer/Django/news&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\acer\Django\newsproject\templates\registration" />
+      <recent name="C:\Users\acer\Django\newsproject\templates\crud" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

@@ -106,7 +106,7 @@ img:hover{opacity:0.75}
 .single_iteam{display:inline; float:left; position:relative; width:100%; height:448px}
 .single_iteam img{width:100%; height:100%}
 .single_iteam img:hover{opacity:1}
-.slider_article{ bottom:20px; left:0; position:absolute; right:0; padding:10px 15px}
+ .slider_article{ bottom:20px; left:0; position:absolute; right:0; padding:10px 15px}
 .slider_article > h2 a{ background:none repeat scroll 0 0 rgba(0,0,0,0.4); color:#fff; font-size:18px; padding:10px; display:inline-block}
 .slider_article > p{ background:none repeat scroll 0 0 rgba(0,0,0,0.4); color:#fff; padding:3px; display:inline-block}
 .slick-prev:before{ content:""}

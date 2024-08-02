@@ -1,0 +1,5 @@
+<h2>Saytda ro'yxatdan o'tish</h2>
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Ro'yxatdan o'tish</button>
+</form>
