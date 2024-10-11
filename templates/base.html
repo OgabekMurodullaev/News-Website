@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,11 +35,11 @@
         <div class="header_top">
           <div class="header_top_left">
             <ul class="top_nav">
-              <li><a href="{% url 'home' %}">Bosh Sahifa</a></li>
-              <li><a href="#">Biz Haqimizda</a></li>
-              <li><a href="{% url 'contact' %}">Kontakt</a></li>
+              <li><a href="{% url 'home' %}">{% blocktrans %}Bosh Sahifa {% endblocktrans %}</a></li>
+              <li><a href="#">{% blocktrans %}Biz Haqimizda {% endblocktrans %}</a></li>
+              <li><a href="{% url 'contact' %}">{% blocktrans %} Kontakt {% endblocktrans %}</a></li>
               {% if user.is_authenticated and user.is_superuser %}
-                <li><a href="{% url 'admin_page' %}">Admins Page</a></li>
+                <li><a href="{% url 'admin_page' %}">{% blocktrans %} Admins Page {% endblocktrans %}</a></li>
               {% endif %}
             </ul>
 
@@ -81,6 +82,20 @@
         <form method="get" action="{% url 'search_result' %}" class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
             </form>
+        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}">
+    <select name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Go">
+      </form>
       </div>
     </nav>
   </section>
